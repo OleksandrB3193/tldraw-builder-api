@@ -8,6 +8,7 @@
   ],
   "env": {
     "REACT_NOUN_PROJECT_API_KEY": "@react_noun_project_api_key",
-    "REACT_NOUN_PROJECT_API_SECRET": "@react_noun_project_api_secret"
+    "REACT_NOUN_PROJECT_API_SECRET": "@react_noun_project_api_secret",
+    "REACT_PORT": "5555"
   }
 }
