@@ -24,13 +24,15 @@ const oauth = new OAuth(
 app.get("/api/icons", (req, res) => {
   const { query, next_page } = req.query;
 
+  const limit = 30; // Set the limit to 5 icons per request
+
   if (!query) {
     return res.status(400).json({ error: "Query is required" });
   }
 
   const searchUrl = next_page
-    ? `https://api.thenounproject.com/v2/icon?query=${query}&next_page=${next_page}&limit=5&limit_to_public_domain=1`
-    : `https://api.thenounproject.com/v2/icon?query=${query}&limit=5&limit_to_public_domain=1`;
+    ? `https://api.thenounproject.com/v2/icon?query=${query}&next_page=${next_page}&limit=${limit}&limit_to_public_domain=1`
+    : `https://api.thenounproject.com/v2/icon?query=${query}&limit=${limit}&limit_to_public_domain=1`;
 
   oauth.get(searchUrl, "", "", (err, result) => {
     if (err) {
