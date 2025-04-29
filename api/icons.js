@@ -28,7 +28,7 @@ const handler = async (req, res) => {
         return res.status(400).json({ error: "Query is required" });
       }
 
-      const searchUrl = `https://api.thenounproject.com/v2/icon?query=${query}&limit=10&limit_to_public_domain=1`;
+      const searchUrl = `https://api.thenounproject.com/v2/icon?query=${query}&limit=40&limit_to_public_domain=1`;
 
       oauth.get(searchUrl, "", "", (err, result) => {
         if (err) {
